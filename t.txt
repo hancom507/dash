@@ -1,0 +1,11 @@
+df = pd.read_csv('./data/countMonth.csv')
+    data = df['data'][0]
+    fig2 = go.Figure()
+    fig2.add_trace(
+        go.Indicator(
+            mode="number",
+            value=data,
+            title={'text': "지난달 총 방문객", 'font': {'size': 20}},
+            number={'suffix': '명', 'font': {'size': 20}, 'valueformat': ',d'},
+        )
+    )

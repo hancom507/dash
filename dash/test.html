@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_118816e0163046708e04e0d2aa2a2fe9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_118816e0163046708e04e0d2aa2a2fe9" ></div>
+        
+</body>
+<script>    
+    
+            var map_118816e0163046708e04e0d2aa2a2fe9 = L.map(
+                "map_118816e0163046708e04e0d2aa2a2fe9",
+                {
+                    center: [35.72743991833333, 126.73482182916666],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aa9955c6e8ca45dea19aed833a603e62 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+            var marker_37539ff7e42c4aef9611d48235d286de = L.marker(
+                [35.73052874, 126.7316997],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_3ce472e17fc24a9a82e45c0247d3c35a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bc2e674317a84b73becab4d366a96606 = $(`<div id="html_bc2e674317a84b73becab4d366a96606" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류주택가 </pre></div>`)[0];
+            popup_3ce472e17fc24a9a82e45c0247d3c35a.setContent(html_bc2e674317a84b73becab4d366a96606);
+        
+
+        marker_37539ff7e42c4aef9611d48235d286de.bindPopup(popup_3ce472e17fc24a9a82e45c0247d3c35a)
+        ;
+
+        
+    
+    
+            marker_37539ff7e42c4aef9611d48235d286de.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2ed58d3643954739865f2dac0b5ff5ec = L.marker(
+                [35.72914864, 126.7301763],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_d8e2dec77de841159e5ace66dbf3108d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2fcab72f40bc4fb389dee95b3bb85d2e = $(`<div id="html_2fcab72f40bc4fb389dee95b3bb85d2e" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류주택가 </pre></div>`)[0];
+            popup_d8e2dec77de841159e5ace66dbf3108d.setContent(html_2fcab72f40bc4fb389dee95b3bb85d2e);
+        
+
+        marker_2ed58d3643954739865f2dac0b5ff5ec.bindPopup(popup_d8e2dec77de841159e5ace66dbf3108d)
+        ;
+
+        
+    
+    
+            marker_2ed58d3643954739865f2dac0b5ff5ec.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1cb5d055e6fd40299ae492d37ea8be2c = L.marker(
+                [35.72765562, 126.7305488],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_6c542b8d851b40ca874a2a8de09e0ea7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0d25a19d1cb54532896048cf4f991bb2 = $(`<div id="html_0d25a19d1cb54532896048cf4f991bb2" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류매화 주택가 </pre></div>`)[0];
+            popup_6c542b8d851b40ca874a2a8de09e0ea7.setContent(html_0d25a19d1cb54532896048cf4f991bb2);
+        
+
+        marker_1cb5d055e6fd40299ae492d37ea8be2c.bindPopup(popup_6c542b8d851b40ca874a2a8de09e0ea7)
+        ;
+
+        
+    
+    
+            marker_1cb5d055e6fd40299ae492d37ea8be2c.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b7b88f4357d4601b60f854bddc6dd80 = L.marker(
+                [35.72741777, 126.7309917],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_8bd6fc88831f484c9bb5f256b62f8986 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5f8e655e0949404cb21bcac5e24610b5 = $(`<div id="html_5f8e655e0949404cb21bcac5e24610b5" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류매화 주택가 </pre></div>`)[0];
+            popup_8bd6fc88831f484c9bb5f256b62f8986.setContent(html_5f8e655e0949404cb21bcac5e24610b5);
+        
+
+        marker_2b7b88f4357d4601b60f854bddc6dd80.bindPopup(popup_8bd6fc88831f484c9bb5f256b62f8986)
+        ;
+
+        
+    
+    
+            marker_2b7b88f4357d4601b60f854bddc6dd80.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ba38b3c099e74eedb3e10e39be23495d = L.marker(
+                [35.7271713, 126.7316115],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_90f10153d0214c40a559e977ce4db032 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3d562938ec71420b989acfbfa0157a70 = $(`<div id="html_3d562938ec71420b989acfbfa0157a70" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류매화 주택가 </pre></div>`)[0];
+            popup_90f10153d0214c40a559e977ce4db032.setContent(html_3d562938ec71420b989acfbfa0157a70);
+        
+
+        marker_ba38b3c099e74eedb3e10e39be23495d.bindPopup(popup_90f10153d0214c40a559e977ce4db032)
+        ;
+
+        
+    
+    
+            marker_ba38b3c099e74eedb3e10e39be23495d.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c9235b9229754a57b5ff394384dd6039 = L.marker(
+                [35.72737154, 126.7324896],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_10c3413e43434ba4a37e7f869237aa48 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_23aa18d8784447cdb30a4af48f8c8414 = $(`<div id="html_23aa18d8784447cdb30a4af48f8c8414" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안상설시장 </pre></div>`)[0];
+            popup_10c3413e43434ba4a37e7f869237aa48.setContent(html_23aa18d8784447cdb30a4af48f8c8414);
+        
+
+        marker_c9235b9229754a57b5ff394384dd6039.bindPopup(popup_10c3413e43434ba4a37e7f869237aa48)
+        ;
+
+        
+    
+    
+            marker_c9235b9229754a57b5ff394384dd6039.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc8c2cb32f69476fa4cf5b0840b1f78b = L.marker(
+                [35.72859554, 126.7327259],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_be7c001ac94e4d22ba97c5efd449ccd9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b1f87e007d6248a1a8d62982bf6baf78 = $(`<div id="html_b1f87e007d6248a1a8d62982bf6baf78" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안초등학교 </pre></div>`)[0];
+            popup_be7c001ac94e4d22ba97c5efd449ccd9.setContent(html_b1f87e007d6248a1a8d62982bf6baf78);
+        
+
+        marker_bc8c2cb32f69476fa4cf5b0840b1f78b.bindPopup(popup_be7c001ac94e4d22ba97c5efd449ccd9)
+        ;
+
+        
+    
+    
+            marker_bc8c2cb32f69476fa4cf5b0840b1f78b.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2206b89e60d549ee9ca578316ab8f1a7 = L.marker(
+                [35.7285673, 126.7321871],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_d40b4042d1b34016950188ad7c792183 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e8f962e4d21e4e859c2754d9ba8fc786 = $(`<div id="html_e8f962e4d21e4e859c2754d9ba8fc786" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안초등학교 </pre></div>`)[0];
+            popup_d40b4042d1b34016950188ad7c792183.setContent(html_e8f962e4d21e4e859c2754d9ba8fc786);
+        
+
+        marker_2206b89e60d549ee9ca578316ab8f1a7.bindPopup(popup_d40b4042d1b34016950188ad7c792183)
+        ;
+
+        
+    
+    
+            marker_2206b89e60d549ee9ca578316ab8f1a7.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a112915278394ccba7365974cbff42f3 = L.marker(
+                [35.72949728, 126.7329384],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_af673b9770de4eb2b26b518869b8fae3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d890aa8424184252867a5d5cb92eacd7 = $(`<div id="html_d890aa8424184252867a5d5cb92eacd7" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안초등학교 </pre></div>`)[0];
+            popup_af673b9770de4eb2b26b518869b8fae3.setContent(html_d890aa8424184252867a5d5cb92eacd7);
+        
+
+        marker_a112915278394ccba7365974cbff42f3.bindPopup(popup_af673b9770de4eb2b26b518869b8fae3)
+        ;
+
+        
+    
+    
+            marker_a112915278394ccba7365974cbff42f3.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0935b55da41b4603857b63f4278f521d = L.marker(
+                [35.72965985, 126.7341067],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_89cf576d419c4790baf255b68e3c716e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_def88219976245dc954048c2aebbc561 = $(`<div id="html_def88219976245dc954048c2aebbc561" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안초등학교 </pre></div>`)[0];
+            popup_89cf576d419c4790baf255b68e3c716e.setContent(html_def88219976245dc954048c2aebbc561);
+        
+
+        marker_0935b55da41b4603857b63f4278f521d.bindPopup(popup_89cf576d419c4790baf255b68e3c716e)
+        ;
+
+        
+    
+    
+            marker_0935b55da41b4603857b63f4278f521d.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fad2cf7011964960858bc4b71ba81ca1 = L.marker(
+                [35.7293715, 126.7351578],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_a0459bb248ef4833930f8e06fdf9dbd3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_59c682d8ab3f498cb2ec43ca6fff5bd3 = $(`<div id="html_59c682d8ab3f498cb2ec43ca6fff5bd3" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안초등학교 </pre></div>`)[0];
+            popup_a0459bb248ef4833930f8e06fdf9dbd3.setContent(html_59c682d8ab3f498cb2ec43ca6fff5bd3);
+        
+
+        marker_fad2cf7011964960858bc4b71ba81ca1.bindPopup(popup_a0459bb248ef4833930f8e06fdf9dbd3)
+        ;
+
+        
+    
+    
+            marker_fad2cf7011964960858bc4b71ba81ca1.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00f949de4425470ab4052bb0c766068a = L.marker(
+                [35.72872624, 126.7357955],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_7345e5706ace46dca01d011368dcba52 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_03b4a89bf7414dfbafcefdf9213be310 = $(`<div id="html_03b4a89bf7414dfbafcefdf9213be310" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안시외버스터미널 </pre></div>`)[0];
+            popup_7345e5706ace46dca01d011368dcba52.setContent(html_03b4a89bf7414dfbafcefdf9213be310);
+        
+
+        marker_00f949de4425470ab4052bb0c766068a.bindPopup(popup_7345e5706ace46dca01d011368dcba52)
+        ;
+
+        
+    
+    
+            marker_00f949de4425470ab4052bb0c766068a.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_987891f0e8f749fa9dde59970d9b3995 = L.marker(
+                [35.72741836, 126.7363469],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_1130a6fa42d840e087fe7952bcae4b3a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7d216ea794e640eeb2b4f4dd79fae4a3 = $(`<div id="html_7d216ea794e640eeb2b4f4dd79fae4a3" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안시외버스터미널 </pre></div>`)[0];
+            popup_1130a6fa42d840e087fe7952bcae4b3a.setContent(html_7d216ea794e640eeb2b4f4dd79fae4a3);
+        
+
+        marker_987891f0e8f749fa9dde59970d9b3995.bindPopup(popup_1130a6fa42d840e087fe7952bcae4b3a)
+        ;
+
+        
+    
+    
+            marker_987891f0e8f749fa9dde59970d9b3995.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0cb3762f04f54d7ab3fca1e25e2c3026 = L.marker(
+                [35.73024921, 126.7367382],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_ca2a2808a1664c658c8877c64e37fe1d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0845124570014f1592d96cfdb2dd0d4d = $(`<div id="html_0845124570014f1592d96cfdb2dd0d4d" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안시외버스터미널 </pre></div>`)[0];
+            popup_ca2a2808a1664c658c8877c64e37fe1d.setContent(html_0845124570014f1592d96cfdb2dd0d4d);
+        
+
+        marker_0cb3762f04f54d7ab3fca1e25e2c3026.bindPopup(popup_ca2a2808a1664c658c8877c64e37fe1d)
+        ;
+
+        
+    
+    
+            marker_0cb3762f04f54d7ab3fca1e25e2c3026.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_635a0c45850749b5b770efca6bc502da = L.marker(
+                [35.72836908, 126.7373247],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_120aa6f5e4354284ba82899562a57472 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8752a3e9d21a419c80636ad54e323f33 = $(`<div id="html_8752a3e9d21a419c80636ad54e323f33" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안시외버스터미널 </pre></div>`)[0];
+            popup_120aa6f5e4354284ba82899562a57472.setContent(html_8752a3e9d21a419c80636ad54e323f33);
+        
+
+        marker_635a0c45850749b5b770efca6bc502da.bindPopup(popup_120aa6f5e4354284ba82899562a57472)
+        ;
+
+        
+    
+    
+            marker_635a0c45850749b5b770efca6bc502da.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_755d3d59a995421797d0ab581e298c57 = L.marker(
+                [35.72634386, 126.7375027],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_015fda648bea41f9b45dbec60f6162f2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3a42a981e18f4ff8aba6b2c7d7546b0c = $(`<div id="html_3a42a981e18f4ff8aba6b2c7d7546b0c" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안시외버스터미널 </pre></div>`)[0];
+            popup_015fda648bea41f9b45dbec60f6162f2.setContent(html_3a42a981e18f4ff8aba6b2c7d7546b0c);
+        
+
+        marker_755d3d59a995421797d0ab581e298c57.bindPopup(popup_015fda648bea41f9b45dbec60f6162f2)
+        ;
+
+        
+    
+    
+            marker_755d3d59a995421797d0ab581e298c57.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d79accc33c294161a3a7382d7325eb8b = L.marker(
+                [35.72513093, 126.7371696],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_426cc0ff30f34915b8d0c2b1335556be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1c8eb9d72f914e628f609f214f4ea2b5 = $(`<div id="html_1c8eb9d72f914e628f609f214f4ea2b5" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안시외버스터미널 </pre></div>`)[0];
+            popup_426cc0ff30f34915b8d0c2b1335556be.setContent(html_1c8eb9d72f914e628f609f214f4ea2b5);
+        
+
+        marker_d79accc33c294161a3a7382d7325eb8b.bindPopup(popup_426cc0ff30f34915b8d0c2b1335556be)
+        ;
+
+        
+    
+    
+            marker_d79accc33c294161a3a7382d7325eb8b.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e4ffb897a8574882a51b5d0defdbed83 = L.marker(
+                [35.72315981, 126.7353027],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_2a60f19742834f1e94003d49211b1677 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dd3c01895e98462db14d6aa6469996fa = $(`<div id="html_dd3c01895e98462db14d6aa6469996fa" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류매화 상가거리 </pre></div>`)[0];
+            popup_2a60f19742834f1e94003d49211b1677.setContent(html_dd3c01895e98462db14d6aa6469996fa);
+        
+
+        marker_e4ffb897a8574882a51b5d0defdbed83.bindPopup(popup_2a60f19742834f1e94003d49211b1677)
+        ;
+
+        
+    
+    
+            marker_e4ffb897a8574882a51b5d0defdbed83.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_644b7b4619db49c2a8b41c4e93058f49 = L.marker(
+                [35.72513543, 126.7351138],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_7368daa0b8f54b90a39a9e6910772ba7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a146aad45b749d1b7f13218cf7fc66c = $(`<div id="html_4a146aad45b749d1b7f13218cf7fc66c" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 풍류매화 상가거리 </pre></div>`)[0];
+            popup_7368daa0b8f54b90a39a9e6910772ba7.setContent(html_4a146aad45b749d1b7f13218cf7fc66c);
+        
+
+        marker_644b7b4619db49c2a8b41c4e93058f49.bindPopup(popup_7368daa0b8f54b90a39a9e6910772ba7)
+        ;
+
+        
+    
+    
+            marker_644b7b4619db49c2a8b41c4e93058f49.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a1925e83a6d4f90a6a002bba247a261 = L.marker(
+                [35.72610106, 126.7346684],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_fdbf5280292041319a666c9e8f3a07a6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eb5c5f3da4c249d1acf597402eeb2f72 = $(`<div id="html_eb5c5f3da4c249d1acf597402eeb2f72" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안상설시장 </pre></div>`)[0];
+            popup_fdbf5280292041319a666c9e8f3a07a6.setContent(html_eb5c5f3da4c249d1acf597402eeb2f72);
+        
+
+        marker_0a1925e83a6d4f90a6a002bba247a261.bindPopup(popup_fdbf5280292041319a666c9e8f3a07a6)
+        ;
+
+        
+    
+    
+            marker_0a1925e83a6d4f90a6a002bba247a261.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_46b3feb201924e38af6a2e562a60c0e7 = L.marker(
+                [35.7256334, 126.7330812],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_fc9b5b08aff84a8a946813aebb1cd866 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9e3e9afa70f044f8bbb574edfa19e053 = $(`<div id="html_9e3e9afa70f044f8bbb574edfa19e053" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안상설시장 </pre></div>`)[0];
+            popup_fc9b5b08aff84a8a946813aebb1cd866.setContent(html_9e3e9afa70f044f8bbb574edfa19e053);
+        
+
+        marker_46b3feb201924e38af6a2e562a60c0e7.bindPopup(popup_fc9b5b08aff84a8a946813aebb1cd866)
+        ;
+
+        
+    
+    
+            marker_46b3feb201924e38af6a2e562a60c0e7.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e20e4c309c6942ad928eb8200e141251 = L.marker(
+                [35.72571883, 126.7319811],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_b8f2e57de3e44ef6be74c12cefd846d3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c6e7b9fa0209496aa6ffa452c8ee5126 = $(`<div id="html_c6e7b9fa0209496aa6ffa452c8ee5126" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 부안상설시장 </pre></div>`)[0];
+            popup_b8f2e57de3e44ef6be74c12cefd846d3.setContent(html_c6e7b9fa0209496aa6ffa452c8ee5126);
+        
+
+        marker_e20e4c309c6942ad928eb8200e141251.bindPopup(popup_b8f2e57de3e44ef6be74c12cefd846d3)
+        ;
+
+        
+    
+    
+            marker_e20e4c309c6942ad928eb8200e141251.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_021bc1ae21d745f49876e96e626b1fbc = L.marker(
+                [35.72552614, 126.7438607],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_acc5440c576b48bc9f979c0da5012bab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f5cc94dbf57e43c7b87d80d9f8e45232 = $(`<div id="html_f5cc94dbf57e43c7b87d80d9f8e45232" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 해뜰마루 </pre></div>`)[0];
+            popup_acc5440c576b48bc9f979c0da5012bab.setContent(html_f5cc94dbf57e43c7b87d80d9f8e45232);
+        
+
+        marker_021bc1ae21d745f49876e96e626b1fbc.bindPopup(popup_acc5440c576b48bc9f979c0da5012bab)
+        ;
+
+        
+    
+    
+            marker_021bc1ae21d745f49876e96e626b1fbc.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a9d7a7e150241f89ad551c4f14ddda1 = L.marker(
+                [35.72606061, 126.7462049],
+                {}
+            ).addTo(map_118816e0163046708e04e0d2aa2a2fe9);
+        
+    
+        var popup_10727669020a430a87b9670e576aec2e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b1394fcb63da4caf9f4c69195870bfdb = $(`<div id="html_b1394fcb63da4caf9f4c69195870bfdb" style="width: 100.0%; height: 100.0%;"><pre>존 이름 : 해뜰마루 </pre></div>`)[0];
+            popup_10727669020a430a87b9670e576aec2e.setContent(html_b1394fcb63da4caf9f4c69195870bfdb);
+        
+
+        marker_6a9d7a7e150241f89ad551c4f14ddda1.bindPopup(popup_10727669020a430a87b9670e576aec2e)
+        ;
+
+        
+    
+    
+            marker_6a9d7a7e150241f89ad551c4f14ddda1.bindTooltip(
+                `<div>
+                     클릭해주세요
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

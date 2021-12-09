@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow mb-4">
+                         <!-- Card Header - Dropdown -->
+ <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+    <h2 class="m-0 font-weight-bold text-primary">Report</h2>
+ </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="chart-area">
+                <form>
+                  <p>기간 선택</p>
+                  <input type="date" value="2019-09-22" min="2019-09-10" max="2019-09-25"> ~
+                  <input type="date" value="2019-09-22" min="2019-09-10" max="2019-09-25">
+                  <hr/>
+                      <!-- <form method="get" action="form-action.html"> -->
+                  <p>검색지역 선택</p>
+                  <label><input type="checkbox" name="지역" value="남평문길"  checked>부안 풍류주택가</label> &nbsp
+                  <label><input type="checkbox" name="지역" value="마비정길" checked>부안 풍류매화 주택가</label> &nbsp
+
+                  <label><input type="checkbox" name="지역" value="비슬산" checked>부안 상설매장</label> &nbsp
+                  <label><input type="checkbox" name="지역" value="송해공원" checked>부안 부안초등학교</label> &nbsp
+                    <br>
+                  <label><input type="checkbox" name="지역" value="유가사" checked>부안 시외버스터미널</label> &nbsp
+                  <label><input type="checkbox" name="지역" value="화원유원지" checked>부안 풍류매화 상가거리</label> &nbsp
+                  <label><input type="checkbox" name="지역" value="화원유원지" checked>부안 해뜰마루</label> &nbsp
+                  <hr/>
+                  <p>데이터 선택</p>
+                  <label><input type="radio" name="chk_local" value="지역별방문객" checked>지역별 방문객</label> &nbsp
+                  <label><input type="radio" name="chk_local" value="전체방문객" checked>전체 방문객</label> &nbsp
+                  <label><input type="radio" name="chk_local" value="실시간방문객" checked>실시간 방문객</label> &nbsp
+                  <label><input type="radio" name="chk_local" value="환경센서데이터" checked>환경센서데이터</label> &nbsp
+                  <hr/>
+                  <input type="submit" value="조회">
+                </form>
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}

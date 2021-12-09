@@ -1,0 +1,29 @@
+import requests
+#import numpy as np
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+import folium
+from folium import Marker, Icon
+
+devLoc = "http://restapi.toysmythiot.com:8080/v1/DaeguDalseong/DeviceInfo"
+devOnOff = "http://restapi.toysmythiot.com:8080/v1/DaeguDalseong/DeviceStatus"
+floatPopPerHour = "http://restapi.toysmythiot.com:8080/v1/DaeguDalseong/DeviceCountHourly"
+floatPopPerDay = "http://restapi.toysmythiot.com:8080/v1/DaeguDalseong/DeviceCountDay"
+revisitPerDay = "http://restapi.toysmythiot.com:8080/v1/DaeguDalseong/DeviceCountRevisit"
+senseDataPerHour = "http://restapi.toysmythiot.com:8080/v1/DaeguDalseong/SensorDataHourly"
+
+response = requests.get(devLoc)
+data = response.json()
+df = pd.DataFrame(data)
+
+lat = df['xcoordinate'].mean()      #위도 평균 -> 지도 표시 중심 표현하기위해
+long = df['ycoordinate'].mean()
+m = folium.Map([lat,long],zoom_start=12)
+
+tooltip="클릭해주세요"
+for i in df.itertuples():
+    #Marker(location=[i['xcoordinate'][1],i['ycoordinate'][1]]).add_to(m)
+    folium.Marker(location = [i[5],i[6]], popup=f'<pre>설치위치 : {i[3]} </pre>', tooltip = tooltip).add_to(m)  #i[3]
+
+m.save("test.html")
