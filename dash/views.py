@@ -1,36 +1,31 @@
 # 이 파일 수정시 서버를 재 시동해야함
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from plotly.offline import plot
 import plotly.graph_objects as go
 from folium import plugins, Marker, Icon
 import folium
 import pandas as pd
-import datetime
-#import dash_html_components as html
+from datetime import datetime, timedelta
+# import dash_html_components as html
 
 # Create your views here.
 # render()는 첫번째 인자로 request, 두번째 인자로 템플릿, 세번째 인자로 context(dic타입)으로 전달
 # key는 템플릿에서 사용될 템플릿변수명이 되고, value는 전달하는 내용이 된다.
 
+
 def report(request):
-    return render(request, 'dash/report.html')
-
-def test(request):
-    return render(request,'dash/test.html')
-
-def index(request):
     df = pd.read_csv('./data/zoneVisitor.csv')
-    figHour = go.Figure()
+    fighour = go.Figure()
     df['TIME'] = pd.to_datetime(df['TIME'], errors='coerce')
     hour = df.query("TIME >= '2021-08-05 00:00' and TIME <= '2021-08-05 23:59'")
-    figHour.add_trace(
+    fighour.add_trace(
         go.Bar(
             x=hour['TIME'].dt.hour,
             y=hour['시외버스터미널']
         )
     )
-    plot_hour = plot(figHour, output_type='div')
+    plot_hour = plot(fighour, output_type='div')
 
     df = pd.read_csv('./data/zoneVisitorDay.csv')
     df['TIME'] = pd.to_datetime(df['TIME'], errors='coerce')
@@ -56,14 +51,170 @@ def index(request):
     )
     plot_month = plot(figMonth, output_type='div')
 
-
-    return render(request, "dash/index.html", context={'plot_hour': plot_hour,
+    return render(request, 'dash/report.html', context={'plot_hour': plot_hour,
                                                        'plot_week': plot_week,
                                                        'plot_month': plot_month
                                                        }
                   )
 
 
+def test(request):
+    return render(request,'dash/test.html')
+
+def index(request):
+    # 전일 방문객
+    #df = pd.read_csv('./data/floatPopPerDay.csv')
+    df = pd.read_csv('./data/zoneVisitorDay.csv')
+    #df.drop(['TIME'], axis=1, inplace=True)  # 시간값은 계산 못하기에 제거
+    #del df['TIME']
+    data = df.iloc[-1][:-1].sum()
+    deltas = df.iloc[-2][:-1].sum()
+    fig1 = go.Figure()
+    fig1.add_trace(
+        go.Indicator(
+            mode="number+delta",
+            value=data,
+            title={'text': "전일 방문객", 'font': {'size': 20}},
+            number={'suffix': '명', 'font': {'size': 20}, 'valueformat':',.0f'},
+            delta=dict(reference=deltas, increasing=dict(color='blue'))
+        )
+    )
+    fig1.update_layout( width=150, height=100, margin=dict(l=0, r=0, b=0, t=0))
+    plot_div1 = plot(fig1, output_type='div')
+
+    # 지난달 총 방문객
+    df = pd.read_csv('./data/countMonth.csv')
+    data = df['data'][0]
+    fig2 = go.Figure()
+    fig2.add_trace(
+        go.Indicator(
+            mode="number",
+            value=data,
+            title={'text': "지난달 총 방문객", 'font': {'size': 20}},
+            number={'suffix': '명', 'font': {'size': 20}, 'valueformat': ',d'},
+        )
+    )
+    fig2.update_layout(width=150, height=100)
+    plot_div2 = plot(fig2, output_type='div')
+
+    # 체류 시간
+    df = pd.read_csv('./data/residenceTime.csv')
+    data = df['data'].mean() // 60
+    fig3 = go.Figure()
+    fig3.add_trace(
+        go.Indicator(
+            mode="number",
+            value=data,
+            title={'text': "<b>체류 시간</b>", 'font': {'size': 20}},
+            number={'prefix': '<b>', 'suffix': '분</b>', 'font': {'size': 20, 'family': "Arial"}, 'valueformat': 'd'},
+        )
+    )
+    fig3.update_layout(width=150, height=100)
+    plot_div3 = plot(fig3, output_type='div')
+
+    # 어제 재방문객
+    df = pd.read_csv('./data/revisitPerDay.csv')
+    data = df['data'].sum()
+    fig4 = go.Figure()
+    fig4.add_trace(
+        go.Indicator(
+            mode="number",
+            value=data,
+            title={'text': "어제 재방문객", 'font': {'size': 20}},
+            number={'suffix': '명', 'font': {'size': 20}, 'valueformat': ',d'},
+        )
+    )
+    fig4.update_layout(width=150, height=100)
+    plot_div4 = plot(fig4, output_type='div')
+
+
+    #지역별 일일방문객
+    df = pd.read_csv('./data/zoneVisitorDay.csv')
+    zoneDay = go.Figure()
+    y = df.columns[1:-1]
+    x = df.iloc[-1][1:-1]
+    colors = ['blue','lightslategray','green','red','teal','lime','purple' ]
+    #colors[4] = 'crimson'
+    zoneDay.add_trace(
+        go.Bar(
+            y=y,
+            x=x,
+            text = y,
+            orientation = 'h',
+            marker_color = colors
+        )
+    )
+    zoneDay.update_layout(width=540, height=540,xaxis=dict(autorange=True),yaxis=dict(visible=False),
+                          margin=dict(l=0,r=0,t=0,b=0), paper_bgcolor='LightSteelBlue')
+    plot_zoneDay = plot(zoneDay, output_type='div')
+
+    # 지난요일별 방문객
+    df_lastw = pd.read_csv('./data/zoneVisitorDay.csv')
+    del df_lastw['Unnamed: 0']
+    # 기간 검색을 위해 시간값을 변환
+    df_lastw['TIME'] = pd.to_datetime(df_lastw['TIME'], format='%Y-%m-%d')
+    # today= datetime.today()
+    today = datetime.today() - timedelta(67)   #임시로 특정 날짜 지정함
+    #지난주 일요일 값을 구함
+    startDate = today - timedelta(today.weekday()) - timedelta(8)
+    df_lastw = df_lastw[(df_lastw['TIME'] >= startDate) & (df_lastw['TIME'] < startDate + timedelta(7))]
+    y = df_lastw.sum(axis=1)
+    x = ['월요일','화요일','수요일','목요일','금요일','토요일','일요일']
+    fig_w = go.Figure()
+    fig_w.add_trace(
+        go.Scatter(
+            x=x,
+            y=y,
+            mode='markers + lines'))
+    fig_w.update_layout(width=540, height=500, margin=dict(l=0,r=0,t=0,b=0) )
+    plot_fig_w = plot(fig_w, output_type='div')
+
+    # 실시간 방문객
+    df_visitor = pd.read_csv('./data/zoneVisitor.csv')
+    df_visitor['TIME'] = pd.to_datetime(df_visitor['TIME'], format='%Y-%m-%d %H:%M')
+    df_visitor=df_visitor.iloc[-1]
+    fig_pie = go.Figure()
+    fig_pie.add_trace(
+        go.Pie( labels = df_visitor.index[1:-1],
+                values= df_visitor,
+                textinfo='percent',
+                insidetextorientation='tangential',
+                hole=0.2)
+    )
+    fig_pie.update_layout( width=540, height=500, annotations=[dict(text='부안', font_size=20, showarrow=False)],
+                           margin=dict(l=0,r=0,t=0,b=0))
+    plot_fig_pie = plot(fig_pie, output_type='div')
+
+    # 지난주 재방문객
+    df_lastWeek = pd.read_csv('./data/zoneVisitorWeek.csv')
+    fig_lastWeek = go.Figure()
+    x = df_lastWeek.columns[1:-1]
+    y = df_lastWeek.iloc[-1][1:-1]
+    colors = ['blue', 'lightslategray', 'green', 'red', 'teal', 'lime', 'purple']
+    # colors[4] = 'crimson'
+    fig_lastWeek.add_trace(
+        go.Bar(
+            y=y,
+            x=x,
+            text=y,
+            #orientation='h',
+            marker_color=colors
+        )
+    )
+    fig_lastWeek.update_layout(width=540, height=700, xaxis=dict(autorange=True), yaxis=dict(visible=True),
+                               margin=dict(l=0,r=0,t=0,b=0))
+    plot_lastWeek = plot(fig_lastWeek, output_type='div')
+
+    return render(request, "dash/index.html", context={'plot_div1': plot_div1,
+                                                       'plot_div2': plot_div2,
+                                                       'plot_div3': plot_div3,
+                                                       'plot_div4': plot_div4,
+                                                       'plot_div5': plot_zoneDay,
+                                                       'plot_div6': plot_fig_w,
+                                                       'plot_div7': plot_fig_pie,
+                                                       'plot_div8': plot_lastWeek
+                                                       }
+                  )
 
 def login(request):
     #return HttpResponse("login")
