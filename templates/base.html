@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -14,11 +13,13 @@
     <title>가시보드 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
+
+    <!--
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    -->
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
 
@@ -47,7 +48,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Menu</span></a>
+                    <span>메뉴</span></a>
             </li>
 
             <!-- Divider -->
@@ -60,22 +61,22 @@
             <li class="nav-item">
                 <a class="nav-link" href="dash.html" >
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Dashboard</span>
+                    <span>실시간 정보</span>
                 </a>
 
                 <a class="nav-link" href="map.html" >
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Map</span>
+                    <span>지도</span>
                 </a>
 
                 <a class="nav-link" href="report.html" >
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Report</span>
+                    <span>기간별 분석</span>
                 </a>
 
                 <a class="nav-link" href="manager.html" >
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Manger</span>
+                    <span>계정 관리</span>
                 </a>
             </li>
 
@@ -95,28 +96,30 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div class="container-fluid">
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                {% block content %}
 
-            <!-- Main Content -->
-            {% block content %}
+                <!-- End of Main Content -->
+                {% endblock %}
+                <!-- Footer -->
 
-            <!-- End of Main Content -->
-            {% endblock %}
-            <!-- Footer -->
+                <!-- End of Footer -->
+
+            </div>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2021</span>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
+        </footer>
         <!-- End of Content Wrapper -->
 
+        </div>
     </div>
-    <!-- End of Page Wrapper -->
+        <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

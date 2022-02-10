@@ -5,7 +5,7 @@ from django.contrib import admin
 
 from . import views
 
-app_namp = 'dash'
+app_name = 'dash'
 # path() 첫번째 인자는 url에 있는 값, 두번째 인자는
 urlpatterns = [
     path('', views.index),
