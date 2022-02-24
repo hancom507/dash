@@ -1,51 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
 <!-- 배경색 변경 -->
 <div class="container-fluid" style="background-color: #001B50;">
     <div class="card-header " style="background-color: #001B50;">
         <h2 class="font-weight-bold " style="background-color: #001B50; color: #ffffff;">기간 조회</h2>
     </div>
-        <form method="post">
-            {% csrf_token %}
-          <p style="color: #ffffff;">기간 선택</p>
-          <input id = "periodStart" name="startDate" type="date" value="2019-08-22" min="2018-01-10" max="2019-09-25" > ~
-          <input id = "periodEnd" name="endDate" type="date" value="2019-08-25" min="2018-01-10" max="2019-09-25" >
-          <hr/>
-              <!-- <form method="get" action="form-action.html"> -->
-          <p style="color: #ffffff;" >검색지역 선택</p><!-- id추가와 name의 region을 배열형태로 변경-->
-          <label><input id= "pjarea" type="checkbox" name="region[]" value="풍류주택가" checked>풍류주택가</label> &nbsp
-          <label><input id= "pmjarea" type="checkbox" name="region[]" value="풍류매화 주택가" checked>풍류매화 주택가</label> &nbsp
+    <div class="row">
+        <div class="row col-xl-6">
+            <form method="post">
+                {% csrf_token %}
+              <p style="color: #ffffff;">기간 선택</p>
+              <input id = "periodStart" name="startDate" type="date" value="2021-08-22" min="2018-01-10" max="2021-09-25" > ~
+              <input id = "periodEnd" name="endDate" type="date" value="2021-08-25" min="2018-01-10" max="2021-09-25" >
+              <hr/>
+                  <!-- <form method="get" action="form-action.html"> -->
+              <p style="color: #ffffff;" >검색지역 선택</p><!-- id추가와 name의 region을 배열형태로 변경-->
+              <label><input id= "pjarea" type="checkbox" name="region[]" value="풍류주택가" checked>풍류주택가</label> &nbsp
+              <label><input id= "pmjarea" type="checkbox" name="region[]" value="풍류매화 주택가" checked>풍류매화 주택가</label> &nbsp
 
-          <label><input id= "shop" type="checkbox" name="region[]" value="부안 상설매장" checked>부안 상설매장</label> &nbsp
-          <label><input id= "school" type="checkbox" name="region[]" value="부안초등학교" checked>부안초등학교</label> &nbsp
-            <br>
-          <label><input id= "teminal" type="checkbox" name="region[]" value="시외버스터미널" checked>시외버스터미널</label> &nbsp
-          <label><input id= "storeStreet" type="checkbox" name="region[]" value="풍류매화 상가거리" checked>풍류매화 상가거리</label> &nbsp
-          <label><input id= "sunGarden" type="checkbox" name="region[]" value="해뜰마루" checked>해뜰마루</label> &nbsp
-          <hr/>
-          <p style="color: #ffffff;" >데이터 선택</p>
-          <label><input type="radio" name="chk_local[]" value="지역별방문객" checked>지역별 방문객</label> &nbsp
-          <label><input type="radio" name="chk_local[]" value="전체방문객" checked>전체 방문객</label> &nbsp
-          <label><input type="radio" name="chk_local[]" value="실시간방문객" checked>실시간 방문객</label> &nbsp
-          <label><input type="radio" name="chk_local[]" value="환경센서데이터" checked>환경센서데이터</label> &nbsp
-          <hr/>
-          <span>
-              <button type="submit" value="조회" onclick="submitContents()">조회</button>
-          </span>
-        </form>
-</div>
-
-
-<div style="background-color: #00153E;">
-    <div style="background-color: #001B50;">
-        <div class="font-weight-bold text-center pt-4" style="background-color: #00153E;">
-            {{plot_week|safe}}
-            {{rgv}}
+              <label><input id= "shop" type="checkbox" name="region[]" value="부안 상설매장" checked>부안 상설매장</label> &nbsp
+              <label><input id= "school" type="checkbox" name="region[]" value="부안초등학교" checked>부안초등학교</label> &nbsp
+                <br>
+              <label><input id= "teminal" type="checkbox" name="region[]" value="시외버스터미널" checked>시외버스터미널</label> &nbsp
+              <label><input id= "storeStreet" type="checkbox" name="region[]" value="풍류매화 상가거리" checked>풍류매화 상가거리</label> &nbsp
+              <label><input id= "sunGarden" type="checkbox" name="region[]" value="해뜰마루" checked>해뜰마루</label> &nbsp
+              <hr/>
+              <p style="color: #ffffff;" >데이터 선택</p>
+              <label><input type="radio" name="chk_data" value="지역별방문객" checked>지역별 방문객</label> &nbsp
+              <label><input type="radio" name="chk_data" value="전체방문객" checked>전체 방문객</label> &nbsp
+              <label><input type="radio" name="chk_data" value="실시간방문객" checked>실시간 방문객</label> &nbsp
+              <label><input type="radio" name="chk_data" value="환경센서데이터" checked>환경센서데이터</label> &nbsp
+              <hr/>
+              <span>
+                  <button type="submit" value="조회" onclick="submitContents()">조회</button>
+              </span>
+            </form>
+        </div>
+        <div style="background-color: #001B50;" class="col-xl-6">
+            <div style="background-color: #001B50;">
+                <div class="font-weight-bold text-center pt-4" style="background-color: #00153E; padding-top: 0px;">
+                    {{plot_chart|safe}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
+
 
 <script type="text/javascript">
 
