@@ -1,28 +1,22 @@
-"""config URL Configuration
+# 소스 수정시 서버 재실행
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+from django.urls import path
 from django.contrib import admin
-from django.urls import path, include
-from django.shortcuts import redirect
-from dash.views import index_views
+from .views import index_views, map_views, report_views, dg_index_views
 
-#from dash import views
+from . import views
 
+app_name = 'dash'
+# path() 첫번째 인자는 url에 있는 값, 두번째 인자는
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('dash/', include('dash.urls')),
-    path('', lambda request : redirect('dash/')),
-
+    path('', index_views.index),
+    path('', dg_index_views.index),
+    path('dash.html', dg_index_views.index),
+    path('dash.html', index_views.index),
+    #path('test/', views.test),
+    #path('login.html', views.demo_plot_view),
+    path('manager.html', admin.site.urls),
+    # view.py
+    path('map.html',map_views.map, name='map'),
+    path('report.html', report_views.report),
 ]
